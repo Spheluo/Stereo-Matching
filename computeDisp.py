@@ -1,12 +1,16 @@
 import numpy as np
 import cv2.ximgproc as xip
 import cv2
+import random
+random.seed(999)
 
 def computeDisp(Il, Ir, max_disp):
     h, w, ch = Il.shape
     labels = np.zeros((h, w), dtype=np.float32)
     Il = Il.astype(np.float32)
     Ir = Ir.astype(np.float32)
+    sigma_r, sigma_s, WMF_r = 4, 11, 11
+#     sigma_r, sigma_s, WMF_r = 15, 5, 15
 
     # >>> Cost Computation
     # TODO: Compute matching cost
@@ -41,7 +45,6 @@ def computeDisp(Il, Ir, max_disp):
     # create cost volumes of shape (h,w,N+1) to record Hamming distances under N+1 disparity
     l_cost_volume = np.zeros((max_disp+1, h, w))
     r_cost_volume = np.zeros((max_disp+1, h, w))
-    sigma_r, sigma_s = 4, 11
     wndw_size = -1 # calculate window size from spatial kernel
     for d in range(max_disp+1):
         l_shift = imgL_bin[:, :, d:].astype(np.uint32)
@@ -96,7 +99,7 @@ def computeDisp(Il, Ir, max_disp):
     labels = np.min((l_labels, r_labels), axis=0)
 
     # weighted median filter
-    labels = xip.weightedMedianFilter(Il.astype(np.uint8), labels, 11)
+    labels = xip.weightedMedianFilter(Il.astype(np.uint8), labels, WMF_r)
 
     return labels.astype(np.uint8)
     
