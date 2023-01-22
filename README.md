@@ -15,6 +15,6 @@ Determine disparity based on estimated cost. [Tips] Winner-take-all
 
 ### 4. Disparity Refinement: 
 Do whatever to enhance the disparity map.[Tips] Left-right consistency check -> Hole filling -> Weighted median filtering
-<img width="500" alt="截圖 2023-01-22 下午4 47 48" src="https://user-images.githubusercontent.com/96567794/213907579-88aa24ef-e903-4f62-b138-e98b9b4c87e2.png">
-<img width="500" alt="截圖 2023-01-22 下午4 48 00" src="https://user-images.githubusercontent.com/96567794/213907582-f5899bb1-060e-4785-bd06-c50633ab80bc.png">
-<img width="500" alt="截圖 2023-01-22 下午4 48 12" src="https://user-images.githubusercontent.com/96567794/213907589-ad9a928d-df1a-4690-ac33-82b8b9f541ed.png">
+<img width="600" alt="截圖 2023-01-22 下午4 47 48" src="https://user-images.githubusercontent.com/96567794/213907579-88aa24ef-e903-4f62-b138-e98b9b4c87e2.png">
+<img width="600" alt="截圖 2023-01-22 下午4 48 00" src="https://user-images.githubusercontent.com/96567794/213907582-f5899bb1-060e-4785-bd06-c50633ab80bc.png">
+<img width="600" alt="截圖 2023-01-22 下午4 48 12" src="https://user-images.githubusercontent.com/96567794/213907589-ad9a928d-df1a-4690-ac33-82b8b9f541ed.png">
